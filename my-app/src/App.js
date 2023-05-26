@@ -48,48 +48,48 @@ import { useState } from 'react'
 // }
 
 //! Single Source of Truth (Единый источник истины)
-// const Counter = ({ valueCounter, setValueCounter }) => {
-// 	return (
-// 		<>
-// 			<div>{valueCounter}</div>
-// 			<button onClick={() => setValueCounter(valueCounter + 1)}>
-// 				{valueCounter}+1
-// 			</button>
-// 		</>
-// 	)
-// }
+const Counter = ({ valueCounter, setValueCounter }) => {
+	return (
+		<>
+			<div>{valueCounter}</div>
+			<button onClick={() => setValueCounter(valueCounter + 1)}>
+				{valueCounter}+1
+			</button>
+		</>
+	)
+}
 
-// export const App = () => {
-// 	const [valueAppState, setvalueAppState] = useState(0)
+export const App = () => {
+	const [valueAppState, setvalueAppState] = useState(0)
 
-// 	return (
-// 		<div className={styles.app}>
-// 			<label>Счётчик: {valueAppState}</label>
-// 			<Counter
-// 				valueCounter={valueAppState}
-// 				setValueCounter={setvalueAppState}
-// 			/>
-// 		</div>
-// 	)
-// }
+	return (
+		<div className={styles.app}>
+			<label>Счётчик: {valueAppState}</label>
+			<Counter
+				valueCounter={valueAppState}
+				setValueCounter={setvalueAppState}
+			/>
+		</div>
+	)
+}
 
 //! Разделение компонентов по их функциональной роли:                   Stateful и stateless-компоненты
 //! Stateless-компонент
-const AppLayout = ({ a, b, setA, setB, sum }) => (
-	<div className={styles.app}>
-		<div>A: {a}</div>
-		<button onClick={() => setA(a + 1)}>Прибавить 1 к A</button>
-		<div>B: {b}</div>
-		<button onClick={() => setB(b + 1)}>Прибавить 1 к B</button>
-		<div>Сумма A + B: {sum}</div>
-	</div>
-)
-//! Stateful-компонент
-export const App = () => {
-	const [a, setA] = useState(0)
-	const [b, setB] = useState(0)
+// const AppLayout = ({ a, b, setA, setB, sum }) => (
+// 	<div className={styles.app}>
+// 		<div>A: {a}</div>
+// 		<button onClick={() => setA(a + 1)}>Прибавить 1 к A</button>
+// 		<div>B: {b}</div>
+// 		<button onClick={() => setB(b + 1)}>Прибавить 1 к B</button>
+// 		<div>Сумма A + B: {sum}</div>
+// 	</div>
+// )
+// //! Stateful-компонент
+// export const App = () => {
+// 	const [a, setA] = useState(0)
+// 	const [b, setB] = useState(0)
 
-	const sum = a + b
+// 	const sum = a + b
 
-	return <AppLayout a={a} b={b} setA={setA} setB={setB} sum={sum} />
-}
+// 	return <AppLayout a={a} b={b} setA={setA} setB={setB} sum={sum} />
+// }
